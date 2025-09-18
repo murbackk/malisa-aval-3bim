@@ -2,13 +2,24 @@ const express = require('express');
 const router = express.Router();
 const cargoController = require('../controllers/cargoController');
 
-// CRUD de cargos
+// Rotas do CRUD de cargos
 
-router.get('/abrirCrudcargo', cargoController.abrirCrudcargo);
+// Abre a página HTML do CRUD
+router.get('/abrirCrudCargo', cargoController.abrirCrudCargo);
+
+// Listar todos os cargos
 router.get('/', cargoController.listarCargos);
+
+// Criar um novo cargo
 router.post('/', cargoController.criarCargo);
+
+// Obter um cargo pelo ID
 router.get('/:id', cargoController.obterCargo);
+
+// Atualizar cargo pelo ID
 router.put('/:id', cargoController.atualizarCargo);
+
+// Deletar cargo pelo ID
 router.delete('/:id', cargoController.deletarCargo);
 
 module.exports = router;
